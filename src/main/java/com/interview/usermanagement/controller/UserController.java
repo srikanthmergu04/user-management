@@ -40,14 +40,29 @@ public class UserController {
 
 		userRepository.save(user);
 		modelAndView.addObject("user", user);
-		modelAndView.setViewName("userDetail");
+		modelAndView.setViewName("user");
 
 		return modelAndView;
 
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(ModelAndView modelAndView) {
+		modelAndView.addObject("user", new User());
+		modelAndView.setViewName("login");
+		return modelAndView;
+	}
 	
-	
-	
+	@RequestMapping(value = "/validateUser", method = RequestMethod.POST)
+	public ModelAndView validateUser(@ModelAttribute("user") User user, ModelAndView modelAndView) {
+		User userObj = userRepository.findByUserName(user.getUserName());
 
+		if (user.getPassword().equals(userObj.getPassword())) {
+			modelAndView.setViewName("loginSuccess");
+		} else {
+			modelAndView.setViewName("loginError");
+		}
+		return modelAndView;
+	}
+	
 }
