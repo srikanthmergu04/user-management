@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Error</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h2 align="center"> Invalid User Credentials Or User Not Registered. </h2>
+<h3> your session expired login again. </h3>
 <nav>
+<h2> <a href="/login"> Login </a> </h2>
 <h2> <a href="/home"> Home Page </a> </h2>
 </nav>
 </body>
