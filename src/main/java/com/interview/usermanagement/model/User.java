@@ -17,10 +17,6 @@ public class User {
 	@Column
 	private String lastName;
 	@Column
-	private String gender;
-	@Column
-	private int age;
-	@Column
 	private String location;
 	@Column
 	private String phNum;
@@ -55,21 +51,6 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
 
 	public String getLocation() {
 		return location;
@@ -110,5 +91,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", firstName=" + firstName + ", lastName=" + lastName + ", location=" + location
+				+ ", phNum=" + phNum + ", email=" + email + ", userName=" + userName + ", password=" + password + "]";
+	}
+	
 
 }
