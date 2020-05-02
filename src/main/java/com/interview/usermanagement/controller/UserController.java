@@ -40,14 +40,17 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
-	public ModelAndView addUser(@ModelAttribute("user") User user, ModelAndView modelAndView) {
+	public ModelAndView addUser(@ModelAttribute("user") User user, ModelAndView modelAndView, HttpSession httpSession) {
 
 		userRepository.save(user);
+
+		httpSession.setAttribute(user.getUserName(), user);
+		httpSession.setMaxInactiveInterval(60);
+
 		modelAndView.addObject("user", user);
 		modelAndView.setViewName("user");
 
 		return modelAndView;
-
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

@@ -7,7 +7,10 @@
 <title>User Details</title>
 </head>
 <body>
-	<h2 align="center">Sign Up Successful</h2>
+<nav >
+	<h2 align="right" > <a href="/logout"> logout </a> </h2>
+</nav>
+	<h2 align="center">Welcome ${user.userName}</h2>
 	<table align="center" border="3">
 		<tr>
 			<td>User Name: </td>

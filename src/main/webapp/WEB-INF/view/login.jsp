@@ -6,7 +6,7 @@
 <head>
 </head>
 <body>
-	<h3 align="center">Welcome</h3>
+	<h3 align="center">Enter username & password for login.</h3>
 	<form:form method="POST" action="/validateUser" modelAttribute="user">
 		<table align="center">
 			<tr>
